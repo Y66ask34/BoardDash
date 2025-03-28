@@ -1,6 +1,10 @@
 # BoardDash
 
-This is a DashBord app with client/server functionality support.
+DashBord - приложение для ведения списка дел, с поддержкой архитектуры клиент-сервер.
 
-User (client) can add, drop, or edit them things to do, check expire time and edit importance of specific job.
-All of the data will be stored on server for significant user profile.
+# Функционал
+Приложение будет иметь возможность добавления/завершения или удаления элементов из списка, а так же их изменения. Изменению будет подвержено содержание, временные промежутки, а так же важность дела, которая будет иметь градационную модель. 
+
+# Список разработчиков
+1. Факов Станислав Юрьевич (https://github.com/Y66ask34)
+
