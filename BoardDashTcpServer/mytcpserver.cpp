@@ -24,9 +24,26 @@ MyTcpServer::MyTcpServer(QObject *parent) : QObject(parent){
     }
 }
 
+void MyTcpServer::checkClientNextAction(QByteArray action)
+{
+    /**********
+     * Здесь пока что условные названия для действий, которые я держу в голове и условно выписываю
+     * reg - регистрация нового пользователя (дальше будет передача данных пользователя и добавление данных в таблицу БД)
+     * auth - вход пользователя, проверка наличия пользователя в БД, вывод доски для него, если юзер существует
+     *
+     **********/
+    if (action == "reg")
+        regNewUser();
+
+    else if (action == "auth")
+        authExtUser();
+}
+
 void MyTcpServer::slotNewConnection(){
     //   if(server_status==1){
     mTcpSocket = mTcpServer->nextPendingConnection();
+    // Здесь должна быть реализация прослушивания данных для следующего действия со стороны клиента.
+
     mTcpSocket->write("Hello, World!!! I am echo server!\r\n");
     connect(mTcpSocket, &QTcpSocket::readyRead,this,&MyTcpServer::slotServerRead);
     connect(mTcpSocket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
