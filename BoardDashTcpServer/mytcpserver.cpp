@@ -98,7 +98,7 @@ void MyTcpServer::slotNewConnection(){
     mTcpSocket = mTcpServer->nextPendingConnection();
     // Здесь должна быть реализация прослушивания данных для следующего действия со стороны клиента.
 
-    mTcpSocket->write("Hello, World!!! I am echo server!\r\n");
+    mTcpSocket->write("Got a new connection on the server, congrats!");
     connect(mTcpSocket, &QTcpSocket::readyRead,this,&MyTcpServer::slotServerRead);
     connect(mTcpSocket,&QTcpSocket::disconnected,this,&MyTcpServer::slotClientDisconnected);
     // }
