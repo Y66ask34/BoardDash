@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    socket->deleteLater();
+    socket->close();
     delete ui;
 }
 
